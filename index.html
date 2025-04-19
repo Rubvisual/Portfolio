@@ -6,8 +6,7 @@
   <title>Mi Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+  
 </head>
 <body>
   <header>
@@ -32,8 +31,8 @@
       <source src="assets/volar.mp4" type="video/mp4">
       Tu navegador no soporta la etiqueta de video.
     </video>
-    <h1>👋 Holaa, soy Rubén</h1>
-    <p>✨ Trabajo en contenido digital, animación, filmmaking, fotografía y edición de sonido.</p>
+    <h1>👋 Hola, soy Rubén</h1>
+    <p>¡Bienvenid@s a mi porftolio! Acá vas a poder ver un poco de mi trabajo y lo que me gusta hacer.</p>
     <button onclick="document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })">🚀 Ver proyectos</button>
   </section>
 
@@ -45,7 +44,7 @@
       <div class="project">
         <img src="assets/proyecto1.jpg" alt="Proyecto Diseño 1">
         <h3>Logo y branding</h3>
-        <p>Diseño de identidad visual para emprendimiento.</p>
+        <p>Diseño de marca ciudad para Chivilcoy - Buenos Aires.</p>
       </div>
     </div>
 
@@ -54,7 +53,7 @@
       <div class="project">
         <img src="assets/proyecto2.jpg" alt="Proyecto Motion 1">
         <h3>Animación para redes</h3>
-        <p>Animación de piezas para Instagram.</p>
+        <p>Animación para producto marca propia Coto</p>
       </div>
     </div>
 
@@ -62,8 +61,8 @@
     <div class="portfolio-grid">
       <div class="project">
         <img src="assets/proyecto3.jpg" alt="Proyecto Foto 1">
-        <h3>Retrato editorial</h3>
-        <p>Sesión fotográfica para magazine independiente.</p>
+        <h3>Viaveg</h3>
+        <p>Sesión fotográfica de productos</p>
       </div>
     </div>
 
@@ -71,8 +70,8 @@
     <div class="portfolio-grid">
       <div class="project">
         <img src="assets/proyecto4.jpg" alt="Proyecto Video 1">
-        <h3>Videoclip</h3>
-        <p>Producción y edición de videoclip musical.</p>
+        <h3>Kevingston</h3>
+        <p>Producción y edición de spot para el día del padre.</p>
       </div>
     </div>
   </section>
@@ -81,7 +80,10 @@
     <h2>🧠 Sobre mí</h2>
     <div class="about-container">
       <div class="about-text">
-        <p>👨‍🎓 Soy estudiante de diseño gráfico, con experiencia trabajando tanto en empresa como de forma independiente. 🎧 Mi enfoque combina lo visual con lo auditivo, y busco crear piezas con personalidad.</p>
+        <p>👨‍🎓 Soy estudiante de diseño gráfico, con experiencia trabajando de manera independiente y en relación de dependencia. Busco crear piezas que cuenten una historia y dejar mi marca, mi escencia, en cada lugar donde trabajo.</p>
+      </div>
+      <div class="cv-download">
+        <a href="README.md" download>Descargá mi CV</a>
       </div>
       <div class="about-image">
         <img src="assets/fotoPerfil.jpeg" alt="Foto de Rubén" />
@@ -91,20 +93,15 @@
 
   <section id="contacto">
     <h2>📬 Contacto</h2>
-    <p>📨 Puedes escribirme a <a href="mailto:email@ejemplo.com">email@ejemplo.com</a> o encontrarme en redes:</p>
-    <p>📸 <a href="https://www.instagram.com">Instagram</a> | 💻 <a href="https://github.com">GitHub</a></p>
+    <p>📨 Puedes escribirme a <a href="mailto:rubvisual@gmail.com">rubvisual@gmail.com</a> o encontrarme en redes:</p>
+    <p>📸 <a href="https://www.linkedin.com/in/rubncabrera/">Linkedin</a> </p>
   </section>
 
   <footer>
-    <p>© 2025 Ruben Cabrera. Todos los derechos reservados. 🌟</p>
+    <p>© 2025 Ruben Cabrera. Todos los derechos reservados.</p>
   </footer>
 
-  <script>
-    // Mostrar y ocultar dropdown en hover usando JS para mantenerlo activo cuando el cursor está dentro
-    const container = document.querySelector('.dropdown-container');
-    const dropdown = container.querySelector('.dropdown');
-    container.addEventListener('mouseenter', () => dropdown.style.display = 'flex');
-    container.addEventListener('mouseleave', () => dropdown.style.display = 'none');
-  </script>
+
 </body>
+<script src="app.js"></script>
 </html>

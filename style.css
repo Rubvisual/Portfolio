@@ -220,3 +220,15 @@ footer {
     transform: translateX(0);
   }
 }
+
+.cv-download {
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  padding: 5px ;
+  
+}
+
+.cv-download a {
+  text-decoration: none;
+}
