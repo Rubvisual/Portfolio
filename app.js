@@ -5,28 +5,33 @@ const dropdown = container.querySelector('.dropdown');
 container.addEventListener('mouseenter', () => dropdown.style.display = 'flex');
 container.addEventListener('mouseleave', () => dropdown.style.display = 'none');
 
-  const videoThumbnail = document.getElementById('videoTrigger');
-  const modal = document.getElementById('videoModal');
-  const closeModal = document.querySelector('.modal .close');
-  const modalVideo = document.getElementById('modalVideo');
+const videoTriggers = document.querySelectorAll('.videoTrigger');
+const videoModal = document.getElementById('videoModal');
+const modalVideo = document.getElementById('modalVideo');
+const closeVideo = document.querySelector('.modal .close');
 
-  videoThumbnail.addEventListener('click', () => {
-    modal.style.display = 'block';
-    modalVideo.currentTime = 0;
+videoTriggers.forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const videoSrc = trigger.getAttribute('data-video');
+    modalVideo.querySelector('source').src = videoSrc;
+    modalVideo.load();
+    videoModal.style.display = 'flex';
     modalVideo.play();
   });
+});
 
-  closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
+closeVideo.addEventListener('click', () => {
+  videoModal.style.display = 'none';
+  modalVideo.pause();
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === videoModal) {
+    videoModal.style.display = 'none';
     modalVideo.pause();
-  });
+  }
+});
 
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-      modalVideo.pause();
-    }
-  });
 
 // MODAL DE IMAGEN
 const images = document.querySelectorAll('.carousel-img');
@@ -51,21 +56,17 @@ window.addEventListener('click', (e) => {
   }
 });
 
-// AUTO SCROLL INFINITO
-const carousel = document.querySelector('.photo-carousel');
-let scrollAmount = 0;
+// Carrusel con botones
+const carouselContainer = document.querySelector('.photo-carousel');
+const btnLeft = document.querySelector('.carousel-btn.left');
+const btnRight = document.querySelector('.carousel-btn.right');
 
-function autoScrollCarousel() {
-  scrollAmount += 1;
-  if (scrollAmount >= carousel.scrollWidth / 2) {
-    scrollAmount = 0;
-    carousel.scrollLeft = 0;
-  } else {
-    carousel.scrollLeft = scrollAmount;
-  }
-}
+btnLeft.addEventListener('click', () => {
+  carouselContainer.scrollBy({ left: -300, behavior: 'smooth' });
+});
 
-setInterval(autoScrollCarousel, 20);
-
+btnRight.addEventListener('click', () => {
+  carouselContainer.scrollBy({ left: 300, behavior: 'smooth' });
+});
 
 
