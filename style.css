@@ -1,18 +1,20 @@
-
 :root {
   --bg-color: #f9f9f9;
   --text-color: #111;
   --accent-color: #0077ff;
   --card-bg: white;
   --border-radius: 8px;
-  --shadow: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
+
+/* Reset y base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-color);
@@ -20,6 +22,8 @@ body {
   line-height: 1.6;
   padding-top: 80px;
 }
+
+/* Header */
 header {
   position: fixed;
   top: 0;
@@ -32,24 +36,41 @@ header {
   align-items: center;
   z-index: 1000;
 }
+
 nav {
   display: flex;
   align-items: center;
 }
-nav > a, .dropdown-container > .dropdown-toggle {
+
+nav > a,
+.dropdown-container > .dropdown-toggle {
   margin-left: 1.5rem;
-  text-decoration: none;
+  text-decoration: none !important;
   color: var(--text-color);
   font-weight: 500;
   transition: color 0.2s;
   cursor: pointer;
 }
-nav > a:hover, .dropdown-container > .dropdown-toggle:hover {
+
+nav > a:hover,
+.dropdown-container > .dropdown-toggle:hover {
   color: var(--accent-color);
 }
+
+/* Dropdown */
 .dropdown-container {
   position: relative;
 }
+
+.dropdown-toggle {
+  all: unset;
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none !important;
+}
+
 .dropdown {
   position: absolute;
   top: 100%;
@@ -62,26 +83,33 @@ nav > a:hover, .dropdown-container > .dropdown-toggle:hover {
   padding: 0.5rem 1rem;
   z-index: 1000;
 }
+
 .dropdown a {
   margin: 0.25rem 0;
   white-space: nowrap;
-  text-decoration: none;
+  text-decoration: none !important;
   color: var(--text-color);
   font-weight: 500;
   transition: color 0.2s;
 }
+
 .dropdown a:hover {
   color: var(--accent-color);
 }
+
+/* Secciones */
 section {
   padding: 4rem 2rem;
   max-width: 960px;
   margin: 0 auto;
 }
+
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
+/* Hero */
 #hero {
   position: relative;
   display: flex;
@@ -89,19 +117,22 @@ h2 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 100vh; /* <-- asegura que ocupe toda la pantalla */
+  min-height: 100vh;
   padding: 4rem 2rem;
   overflow: hidden;
 }
+
 #hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
+
 #hero p {
   max-width: 600px;
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }
+
 #hero button {
   background-color: var(--accent-color);
   color: white;
@@ -112,6 +143,7 @@ h2 {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 #hero button:hover {
   background-color: #005fcc;
 }
@@ -124,13 +156,16 @@ h2 {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.2; /* Podés subir este valor si querés que el video se vea más */
+  opacity: 0.2;
 }
+
+/* Portfolio */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
+
 .project {
   background: var(--card-bg);
   padding: 1rem;
@@ -138,14 +173,18 @@ h2 {
   box-shadow: var(--shadow);
   transition: transform 0.2s;
 }
+
 .project:hover {
   transform: translateY(-4px);
 }
+
 .project img {
   width: 100%;
   border-radius: var(--border-radius);
   margin-bottom: 0.75rem;
 }
+
+/* Footer */
 footer {
   text-align: center;
   padding: 2rem;
@@ -153,12 +192,8 @@ footer {
   color: var(--text-color);
   font-size: 0.9rem;
 }
-@media (max-width: 600px) {
-  #hero h1 {
-    font-size: 2rem;
-  }
-}
 
+/* About */
 .about-container {
   display: flex;
   align-items: center;
@@ -186,11 +221,17 @@ footer {
   height: 100%;
   object-fit: cover;
 }
+
+/* Media Queries */
 @media (max-width: 600px) {
+  #hero h1 {
+    font-size: 2rem;
+  }
 
   .cv-download {
     margin: auto;
   }
+
   .about-container {
     position: relative;
     flex-direction: column;
@@ -212,6 +253,7 @@ footer {
   }
 }
 
+/* Animaciones */
 @keyframes fadeInRight {
   from {
     opacity: 0;
@@ -223,50 +265,53 @@ footer {
   }
 }
 
+/* CV */
 .cv-download {
-  border-style: solid;
+  border: 1px solid;
   border-radius: 10px;
-  border-width: 1px;
-  padding: 5px ;
-  
+  padding: 5px;
 }
 
 .cv-download a {
   text-decoration: none;
 }
 
+/* Modales (video e imagen) */
 .modal {
   display: none;
   position: fixed;
   z-index: 9999;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(2px);
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
   position: relative;
-  margin: 10% auto;
-  padding: 0;
-  width: 80%;
-  max-width: 640px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-  overflow: hidden;
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.modal-content video {
+.modal-content video,
+#modalImg {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: var(--border-radius);
 }
 
-.modal .close {
+.modal .close,
+.close-img {
   position: absolute;
   top: 8px;
   right: 12px;
@@ -276,6 +321,7 @@ footer {
   z-index: 10001;
 }
 
+/* Carrusel */
 .photo-carousel {
   display: flex;
   overflow-x: auto;
@@ -299,47 +345,8 @@ footer {
   transform: scale(1.05);
 }
 
-
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(2px);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  position: relative;
-  background: white;
-  border-radius: var(--border-radius);
-  padding: 1rem;
-  max-width: 90%;
-  max-height: 90%;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
-
-#modalImg {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--border-radius);
-}
-
-.close-img {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-}
-
-.firma-header img{
+/* Firma */
+.firma-header img {
   width: 100px;
   height: auto;
 }
