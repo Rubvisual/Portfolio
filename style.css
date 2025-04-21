@@ -338,3 +338,8 @@ footer {
   color: #333;
   cursor: pointer;
 }
+
+.firma-header img{
+  width: 100px;
+  height: auto;
+}
