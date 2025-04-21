@@ -329,7 +329,6 @@ footer {
   gap: 1rem;
   padding-bottom: 1rem;
   scroll-snap-type: x mandatory;
-  animation: autoScroll 30s linear infinite;
 }
 
 .carousel-img {
@@ -350,10 +349,6 @@ footer {
 .firma-header img {
   width: 100px;
   height: auto;
-}
-
-.photo-carousel {
-  scroll-behavior: smooth;
 }
 
 .carousel-container {

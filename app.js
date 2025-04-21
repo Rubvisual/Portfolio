@@ -56,17 +56,22 @@ window.addEventListener('click', (e) => {
   }
 });
 
-// Carrusel con botones
-const carouselContainer = document.querySelector('.photo-carousel');
-const btnLeft = document.querySelector('.carousel-btn.left');
-const btnRight = document.querySelector('.carousel-btn.right');
 
-btnLeft.addEventListener('click', () => {
-  carouselContainer.scrollBy({ left: -300, behavior: 'smooth' });
+// Carruseles múltiples
+document.querySelectorAll('.carousel-container').forEach(container => {
+  const carousel = container.querySelector('.photo-carousel');
+  const btnLeft = container.querySelector('.carousel-btn.left');
+  const btnRight = container.querySelector('.carousel-btn.right');
+
+  btnLeft.addEventListener('click', () => {
+    carousel.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+
+  btnRight.addEventListener('click', () => {
+    carousel.scrollBy({ left: 300, behavior: 'smooth' });
+  });
 });
 
-btnRight.addEventListener('click', () => {
-  carouselContainer.scrollBy({ left: 300, behavior: 'smooth' });
-});
+
 
 
