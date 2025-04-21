@@ -6,6 +6,18 @@
   <title>Mi Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+
+  <!-- Modal de video -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <video id="modalVideo" controls controlsList="nodownload" oncontextmenu="return false;">
+      <source src="assets/kvn.mp4" type="video/mp4" />
+      Tu navegador no soporta la reproducción de video.
+    </video>
+  </div>
+</div>
+
   
 </head>
 <body>
@@ -69,9 +81,9 @@
     <h3 id="video">🎥 Video</h3>
     <div class="portfolio-grid">
       <div class="project">
-        <img src="assets/proyecto4.jpg" alt="Proyecto Video 1">
-        <h3>Kevingston</h3>
-        <p>Producción y edición de spot para el día del padre.</p>
+        <img id="videoTrigger" src="assets/CapturaKVN.png" alt="Proyecto Video 1" style="cursor:pointer;">
+        <h3>Videoclip</h3>
+        <p>Producción y edición de videoclip musical.</p>
       </div>
     </div>
   </section>
@@ -103,5 +115,6 @@
 
 
 </body>
+
 <script src="app.js"></script>
 </html>
