@@ -252,6 +252,11 @@ footer {
     animation: fadeInRight 1s ease forwards;
     opacity: 0;
   }
+
+  .firma-header {
+    width: 30px;
+    
+  }
 }
 
 /* Animaciones */
