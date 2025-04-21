@@ -252,13 +252,21 @@ footer {
     animation: fadeInRight 1s ease forwards;
     opacity: 0;
   }
-
   .firma-header {
-    width: 30px;
-    
+    display: none;
+  }
+
+  .firma-header2 img {
+    width: 100%;
+    height: auto;
   }
 }
 
+@media (min-width: 600px) {
+  .firma-header2 {
+    display: none;
+  }
+}
 /* Animaciones */
 @keyframes fadeInRight {
   from {
