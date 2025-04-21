@@ -28,5 +28,44 @@ container.addEventListener('mouseleave', () => dropdown.style.display = 'none');
     }
   });
 
+// MODAL DE IMAGEN
+const images = document.querySelectorAll('.carousel-img');
+const imgModal = document.getElementById('imgModal');
+const modalImg = document.getElementById('modalImg');
+const closeImg = document.querySelector('.close-img');
+
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    modalImg.src = img.src;
+    imgModal.style.display = 'flex';
+  });
+});
+
+closeImg.addEventListener('click', () => {
+  imgModal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === imgModal) {
+    imgModal.style.display = 'none';
+  }
+});
+
+// AUTO SCROLL INFINITO
+const carousel = document.querySelector('.photo-carousel');
+let scrollAmount = 0;
+
+function autoScrollCarousel() {
+  scrollAmount += 1;
+  if (scrollAmount >= carousel.scrollWidth / 2) {
+    scrollAmount = 0;
+    carousel.scrollLeft = 0;
+  } else {
+    carousel.scrollLeft = scrollAmount;
+  }
+}
+
+setInterval(autoScrollCarousel, 20);
+
 
 
