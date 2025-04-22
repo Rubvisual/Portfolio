@@ -5,34 +5,6 @@ const dropdown = container.querySelector('.dropdown');
 container.addEventListener('mouseenter', () => dropdown.style.display = 'flex');
 container.addEventListener('mouseleave', () => dropdown.style.display = 'none');
 
-const videoTriggers = document.querySelectorAll('.videoTrigger');
-const videoModal = document.getElementById('videoModal');
-const modalVideo = document.getElementById('modalVideo');
-const closeVideo = document.querySelector('.modal .close');
-
-videoTriggers.forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    const videoSrc = trigger.getAttribute('data-video');
-    modalVideo.querySelector('source').src = videoSrc;
-    modalVideo.load();
-    videoModal.style.display = 'flex';
-    modalVideo.play();
-  });
-});
-
-closeVideo.addEventListener('click', () => {
-  videoModal.style.display = 'none';
-  modalVideo.pause();
-});
-
-window.addEventListener('click', (e) => {
-  if (e.target === videoModal) {
-    videoModal.style.display = 'none';
-    modalVideo.pause();
-  }
-});
-
-
 // MODAL DE IMAGEN
 const images = document.querySelectorAll('.carousel-img');
 const imgModal = document.getElementById('imgModal');
@@ -70,6 +42,27 @@ document.querySelectorAll('.carousel-container').forEach(container => {
   btnRight.addEventListener('click', () => {
     carousel.scrollBy({ left: 300, behavior: 'smooth' });
   });
+});
+
+// Abrir video en modal
+document.querySelectorAll('.videoTrigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const videoSrc = trigger.dataset.video;
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+
+    video.querySelector('source').src = videoSrc;
+    video.load();
+    modal.style.display = 'flex';
+  });
+});
+
+// Cerrar modal
+document.querySelector('.close').addEventListener('click', () => {
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('modalVideo');
+  video.pause();
+  modal.style.display = 'none';
 });
 
 
