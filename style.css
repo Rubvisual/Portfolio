@@ -306,16 +306,6 @@ footer {
   align-items: center;
 }
 
-.modal-content {
-  position: relative;
-  background: white;
-  border-radius: var(--border-radius);
-  padding: 1rem;
-  max-width: 90%;
-  max-height: 90%;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
 .modal-content video,
 #modalImg {
   width: 100%;
@@ -415,4 +405,26 @@ footer {
 
 .carousel-img:hover {
   transform: scale(1.05);
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  overflow: hidden; /* <- Esto es importante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content video {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--border-radius);
 }
